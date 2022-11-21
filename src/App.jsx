@@ -1,4 +1,5 @@
 import "./App.css";
+import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
         <p>
           Hi, my name is <span style={{ color: "pink" }}>phil choi</span>
         </p>
-        <h2>Let's get started!</h2>
+        <ExpenseItem />
       </header>
     </div>
   );
