@@ -9,6 +9,7 @@ function App() {
           Hi, my name is <span style={{ color: "pink" }}>phil choi</span>
         </p>
         <ExpenseItem />
+        <ExpenseItem />
       </header>
     </div>
   );
