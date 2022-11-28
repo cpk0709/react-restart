@@ -1,8 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
+import "./Expenses.css";
 
 const Expenses = ({ items }) => {
   return (
-    <>
+    <div className="expenses">
       {items.map((item) => {
         return (
           <ExpenseItem
@@ -13,7 +14,7 @@ const Expenses = ({ items }) => {
           />
         );
       })}
-    </>
+    </div>
   );
 };
 
