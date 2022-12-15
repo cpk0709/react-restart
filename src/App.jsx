@@ -1,5 +1,6 @@
 // import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   const expenses = [
@@ -20,9 +21,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        {/* <p>
           Hi, my name is <span style={{ color: "pink" }}>phil choi!</span>
-        </p>
+        </p> */}
+        <NewExpense />
         <Expenses items={expenses} />
       </header>
     </div>
