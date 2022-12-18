@@ -11,13 +11,13 @@ const ExpenseForm = () => {
   };
 
   const amountChangeHandler = (event) => {
-    console.log(event.target.value);
+    setAmount(event.target.value);
   };
 
   const dateChangeHandler = (event) => {
-    console.log(event.target.value);
+    setDate(event.target.value);
   };
-
+  console.log(title, amount, date);
   return (
     <form>
       <div className="new-expense__controls">
