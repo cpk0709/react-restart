@@ -2,28 +2,46 @@ import { useState } from "react";
 import moment from "moment";
 
 const ExpenseForm = () => {
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
+  // const [title, setTitle] = useState("");
+  // const [amount, setAmount] = useState(0);
+  // const [date, setDate] = useState(moment().format("YYYY-MM-DD"));
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: 0,
+    enteredDate: moment().format("YYYY-MM-DD"),
+  });
 
   const titleChangeHandler = (event) => {
-    setTitle(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredTitle: event.target.value,
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setAmount(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredAmount: event.target.value,
+    });
   };
 
   const dateChangeHandler = (event) => {
-    setDate(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredDate: event.target.value,
+    });
   };
-  console.log(title, amount, date);
+  console.log(userInput);
   return (
     <form>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} value={title} />
+          <input
+            type="text"
+            onChange={titleChangeHandler}
+            value={userInput.enteredTitle}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -32,7 +50,7 @@ const ExpenseForm = () => {
             min="0.01"
             step="0.01"
             onChange={amountChangeHandler}
-            value={amount}
+            value={userInput.enteredAmount}
           />
         </div>
         <div className="new-expense__control">
@@ -42,7 +60,7 @@ const ExpenseForm = () => {
             min="2019-01-01"
             step="2023-12-31"
             onChange={dateChangeHandler}
-            value={date}
+            value={userInput.enteredDate}
           />
         </div>
       </div>
